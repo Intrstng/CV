@@ -98,10 +98,14 @@ main {
   grid-template-columns: 32% 57%;
   column-gap: 3%;
 }
+.about__image {
+  text-align: center;
+}
 .about__image img {
   border-radius: 50%;
   background-color: rgb(251, 250, 249);
-  margin: 3rem 1.3rem 6rem;
+  width: 100%;
+  margin: 6rem auto 3rem;
 }
 .about__title {
   font-family: 'Montserrat', 'Lucida Sans', sans-serif;
@@ -772,7 +776,7 @@ color: rgba(43, 125, 237, 0.8);
   }
   .about__image img {
     width: 85%;
-    margin: 4rem 0;
+    margin: 4rem auto;
   }
   .about__text,
   .experience__text {
