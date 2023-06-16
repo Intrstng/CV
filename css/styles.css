@@ -73,8 +73,6 @@ main {
   white-space: nowrap;
   color: rgb(255, 255, 255);
   font-weight: 500;
-}
-.header__nav-link {
   position: relative;
 }
 .header__nav-link::after {
@@ -151,10 +149,13 @@ main {
 }
 /* Experience
 ====================== */
+.experience {
+  position: relative;
+}
 .experience__subtitle {
   font-family: 'Montserrat', 'Lucida Sans', sans-serif;
   font-size: 1.8rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 5rem; /* 2.5rem */
   letter-spacing: 0.03rem;
   font-weight: 500;
   color: rgb(81, 103, 142);
@@ -241,6 +242,13 @@ main {
   top: -60.5rem;
   left: 0.78rem;
   background-color: rgba(81, 103, 142, 0.3);
+}
+.download-cv {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0;
+  text-decoration: none;
 }
 /* Contacts
 ====================== */
@@ -385,6 +393,9 @@ main {
 .courses__item span {
   font-weight: 600;
   letter-spacing: 0.04rem;
+}
+.courses__item i {
+  font-size: 0.85rem;
 }
 .courses__add-item > a {
   font-size: 1rem;
