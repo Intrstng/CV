@@ -7,6 +7,8 @@ html {
   scroll-behavior: smooth;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 14px;
+  /*overflow-x: hidden;*/
+  /*margin-right: calc(-1 * (100vw - 100%));*/
 }
 .grid {
   display: grid;
@@ -23,6 +25,7 @@ html {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding-bottom: 2rem;
 }
 .anchor {
   display: block;
@@ -195,7 +198,7 @@ main {
   line-height: 1.8rem;
   color: rgb(81, 103, 142);
   text-decoration: none;
-  list-style: none;                                              
+  list-style: none;
 }
 .experience__info:last-of-type {
   list-style-type: none;
@@ -250,6 +253,18 @@ main {
   font-size: 0;
   text-decoration: none;
 }
+.download-cv img {
+  width: 4rem;
+  height: 4rem;
+  transition: transform 0.25s ease;
+}
+.download-cv img {
+  width: 4rem;
+  height: 4rem;
+}
+.download-cv:hover img {
+  transform: scale(1.1);
+}
 /* Contacts
 ====================== */
 .card {
@@ -281,7 +296,7 @@ main {
 }
 .card__items-list {
   padding-left: 0;
-  margin-bottom: 0; 
+  margin-bottom: 0;
 }
 .card__contacts-item {
   grid-template-columns: 10% 30% 55%;
@@ -505,6 +520,7 @@ main {
 .languages {
   max-width: 27rem;
   padding: 1.6rem;
+  margin-bottom: 1rem;
   background-color: rgb(240, 248, 255);
   border: 1px solid rgb(176, 219, 253);
   border-radius: 0.5rem;
@@ -641,27 +657,134 @@ color: rgba(43, 125, 237, 0.8);
   letter-spacing: 0.1rem;
   color:rgb(32, 255, 143);
 }
-/* My projects
+/* Certificates
 ============================ */
-.projects__inner {
+.certificates {
+  max-width: 27rem;
+  padding: 1.6rem;
+  background-color: rgb(240, 248, 255);
+  border: 1px solid rgb(176, 219, 253);
+  border-radius: 0.5rem;
+}
+.certificates__subtitle {
+  margin-bottom: 3rem;
+  position: relative;
+  font-family: 'Montserrat', 'Lucida Sans', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.03rem;
+  margin-bottom: 1.5rem;
+  color: rgb(43, 125, 237);
+}
+.certificates__subtitle::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 19rem;
+  height: 2px;
+  background-color: rgba(81, 103, 142, 0.4);
+  bottom: -0.7rem;
+  left: -0.7rem;
+}
+.certificates__item {
+  margin: 1rem 0;
+  cursor: pointer;
+  width: 100%;
+  height: 12.5rem;
+}
+.certificates__img  {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1rem;
+  transition: transform 0.5s ease;
+  cursor: zoom-in;
+}
+.certificates__img:hover {
+  transform: scale(1.06);
+}
+
+/* My projects
+and My mini projects
+============================ */
+.projects__inner,
+.mini-projects__inner {
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
   margin-bottom: 2.5rem;
   column-gap: 0.6rem;
   row-gap: 0.5rem;
 }
-.projects__img {
-  display: block;
-  height: 12.5rem;
-  background-size: cover; 
-  background-position: center;
-  border-radius: 1rem;
-  transition: transform 0.8s ease;
+.projects__item,
+.mini-projects__item {
+  position: relative;
+  text-decoration: none;
+  transition: transform 0.5s ease,
+              opacity 0.5s ease;
 }
-.projects__img:hover {
+.projects__item:hover .projects__overlay,
+.mini-projects__item:hover .projects__overlay {
+  transition: transform 0.5s ease,
+              opacity 0.5s ease;
+  opacity: 1;
+  z-index: 2;
+}
+.projects__item:hover,
+.mini-projects__item:hover {
   transform: scale(1.05) translateY(-0.4rem);
 }
-.projects__subtitle {
+.projects__overlay {
+  position: absolute;
+  z-index: 0;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+}
+.projects__description,
+.mini-projects__description {
+  position: absolute;
+  width: 60%;
+  padding: 0 2rem 2rem 0;
+  top: 10%;
+  left: 10%;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  letter-spacing: 0.05rem;
+}
+
+.projects__description h3,
+.mini-projects__description h3 {
+  margin-bottom: 0.4rem;
+  color: rgb(232, 89, 12);
+}
+.projects__description span,
+.mini-projects__description span {
+  color: rgb(232, 31, 12);
+  font-weight: bold;
+}
+.projects__img,
+.mini-projects__img {
+  display: block;
+  height: 12.5rem;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1rem;
+  transition: transform 0.5s ease,
+              opacity 0.5s ease;
+}
+.projects__item:hover,
+.mini-projects__item:hover {
+  transform: scale(1.05) translateY(-0.4rem);
+}
+.projects__subtitle,
+.mini-projects__subtitle {
   font-family: 'Montserrat', 'Lucida Sans', sans-serif;
   font-size: 1.8rem;
   margin-bottom: 2.5rem;
@@ -670,7 +793,8 @@ color: rgba(43, 125, 237, 0.8);
   color: rgb(81, 103, 142);
   position: relative;
 }
-.projects__subtitle::after {
+.projects__subtitle::after,
+.mini-projects__subtitle::after {
   content: "";
   position: absolute;
   display: inline-block;
@@ -724,11 +848,69 @@ color: rgba(43, 125, 237, 0.8);
   transform: scale(1.12);
 }
 
-@font-face { 
-  font-family: '3270Font'; 
-  src: url("../fonts/3270-Regular.ttf") format("truetype"); 
-  font-style: normal; 
-  font-weight: normal; 
+/* Modal window
+====================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 3;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.modal__content {
+  position: absolute;
+  width: 55%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+/* Close modal btn */
+.modal__close {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  color: rgba(197, 9, 9, 0.6);
+  float: right;
+  font-size: 3rem;
+  font-weight: bold;
+  transition: all 0.25s ease;
+}
+
+.modal__img {
+  width: 100%;
+  height: 100%;
+}
+.modal__close:hover,
+.modal__close:focus {
+  color: rgba(197, 9, 9, 0.9);
+  text-decoration: none;
+  cursor: pointer;
+  transform: scale(1.09);
+}
+/* ======================== */
+
+@font-face {
+  font-family: '3270Font';
+  src: url("../fonts/3270-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
 }
 
 @media (max-width: 1280px) {
@@ -752,19 +934,22 @@ color: rgba(43, 125, 237, 0.8);
   .skills__subtitle,
   .courses__subtitle,
   .education__subtitle,
-  .languages__subtitle {
+  .languages__subtitle,
+  .certificates__subtitle {
     font-size: 1.4rem;
   }
   .about__subtitle,
   .experience__subtitle,
-  .projects__subtitle {
+  .projects__subtitle,
+  .certificates__subtitle {
     font-size: 1.6rem;
   }
   .card__contacts-item,
   .skills__item,
   .courses__item,
   .education__item,
-  .languages__item {
+  .languages__item,
+  .certificates__item {
     font-size: 1rem;
   }
   .about__subtitle::after,
@@ -772,9 +957,10 @@ color: rgba(43, 125, 237, 0.8);
   .projects__subtitle::after,
   .card__subtitle::after,
   .skills__subtitle::after,
-  .courses__subtitle::after, 
+  .courses__subtitle::after,
   .education__subtitle::after,
-  .languages__subtitle::after {
+  .languages__subtitle::after,
+  .certificates__subtitle {
     width: 15rem;
     height: 1px;
   }
@@ -844,7 +1030,8 @@ color: rgba(43, 125, 237, 0.8);
   .skills__subtitle,
   .courses__subtitle,
   .education__subtitle,
-  .languages__subtitle {
+  .languages__subtitle,
+  .certificates__subtitle {
     font-size: 1.2rem;
   }
   .about__subtitle::after,
@@ -852,9 +1039,31 @@ color: rgba(43, 125, 237, 0.8);
   .projects__subtitle::after,
   .card__subtitle::after,
   .skills__subtitle::after,
-  .courses__subtitle::after, 
+  .courses__subtitle::after,
   .education__subtitle::after,
-  .languages__subtitle::after {
+  .languages__subtitle::after,
+  .certificates__subtitle::after {
     width: 12rem;
+  }
+  .modal__content {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media (max-width: 390px) {
+  html {
+    font-size: 40%;
   }
 }
