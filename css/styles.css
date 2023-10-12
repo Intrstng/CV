@@ -960,7 +960,7 @@ and My mini projects
   .courses__subtitle::after,
   .education__subtitle::after,
   .languages__subtitle::after,
-  .certificates__subtitle {
+  .certificates__subtitle::after {
     width: 15rem;
     height: 1px;
   }
