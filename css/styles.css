@@ -78,6 +78,9 @@ main {
   font-weight: 500;
   position: relative;
 }
+.header__nav-item:last-child .header__nav-link {
+  color: rgb(232, 89, 12);
+}
 .header__nav-link::after {
   content: "";
   width: 0;
@@ -87,7 +90,7 @@ main {
   left: 0;
   right: 0;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(212, 225, 24, 0.7);
   transition: width 0.3s ease-out;
 }
 .header__nav-item_hover:hover .header__nav-link::after {
@@ -960,7 +963,7 @@ and My mini projects
   .courses__subtitle::after,
   .education__subtitle::after,
   .languages__subtitle::after,
-  .certificates__subtitle {
+  .certificates__subtitle::after {
     width: 15rem;
     height: 1px;
   }
